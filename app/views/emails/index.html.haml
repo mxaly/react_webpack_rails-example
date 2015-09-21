@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_email_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Email
+  %h1 Listing emails
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Body
+        %th From
+        %th
+        %th
+        %th
+
+    %tbody
+      - @emails.each do |email|
+        %tr
+          %td= email.body
+          %td= email.from
+          %td= link_to 'Show', email
+          %td= link_to 'Edit', edit_email_path(email)
+          %td= link_to 'Destroy', email, data: { confirm: 'Are you sure?' }, method: :delete
