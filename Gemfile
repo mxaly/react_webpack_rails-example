@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'haml-rails'
+gem 'react_webpack_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

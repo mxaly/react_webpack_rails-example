@@ -116,6 +116,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    react_webpack_rails (0.0.21)
     ruby_parser (3.7.1)
       sexp_processor (~> 4.1)
     sass (3.4.18)
@@ -164,6 +165,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
+  react_webpack_rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
