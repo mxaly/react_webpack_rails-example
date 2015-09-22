@@ -4,6 +4,7 @@ class EmailComponent extends React.Component {
   static get propTypes() {
     return {
       email: React.PropTypes.object.isRequired,
+      onRemove: React.PropTypes.func.isRequired,
     };
   }
 
@@ -16,7 +17,7 @@ class EmailComponent extends React.Component {
 
   onRemoveClick() {
     this.setState({removing: true});
-    // TODO: pass remove above
+    this.props.onRemove(this.props.email.id);
   }
 
   _iconClass(name) {
