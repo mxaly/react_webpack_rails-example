@@ -10,7 +10,7 @@ class MailBoxComponent extends React.Component {
 
   render() {
     const list = this.props.emails.map((email) =>
-      <Mail email={email}/>
+      <Mail email={email} key={email.id}/>
     );
     return <div>{list}</div>;
   }
