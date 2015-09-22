@@ -7,6 +7,10 @@ class EmailComponent extends React.Component {
     };
   }
 
+  _iconClass(name) {
+    return `btn btn-xs btn-default glyphicon glyphicon-${name}`;
+  }
+
   render() {
     return (
       <div className="row">
@@ -17,7 +21,10 @@ class EmailComponent extends React.Component {
           {this.props.email.from}
         </div>
         <div className="col-xs-3">
-          TODO: actions
+          <div className="btn-group pull-right">
+            <div className={this._iconClass('remove')}/>
+            <div className={this._iconClass('share')}/>
+          </div>
         </div>
         <hr/>
       </div>
