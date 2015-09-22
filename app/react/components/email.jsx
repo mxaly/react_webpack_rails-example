@@ -7,11 +7,31 @@ class EmailComponent extends React.Component {
     };
   }
 
+  constructor(props) {
+    super(props);
+    this.onRemoveClick = this.onRemoveClick.bind(this);
+
+    this.state = {removing: false};
+  }
+
+  onRemoveClick() {
+    this.setState({removing: true});
+    // TODO: pass remove above
+  }
+
   _iconClass(name) {
     return `btn btn-xs btn-default glyphicon glyphicon-${name}`;
   }
 
   render() {
+    const hourglass = <div className={this._iconClass('hourglass')}/>;
+    const removeButton = (
+      <div
+        className={this._iconClass('remove')}
+        onClick={this.onRemoveClick}
+      />
+    );
+
     return (
       <div className="row">
         <div className="col-xs-6">
@@ -22,7 +42,7 @@ class EmailComponent extends React.Component {
         </div>
         <div className="col-xs-3">
           <div className="btn-group pull-right">
-            <div className={this._iconClass('remove')}/>
+            {this.state.removing ? hourglass : removeButton}
             <div className={this._iconClass('share')}/>
           </div>
         </div>
