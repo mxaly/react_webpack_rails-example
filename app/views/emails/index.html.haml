@@ -3,22 +3,9 @@
     %span.glyphicon.glyphicon-plus
     New Email
   %h1 Listing emails
-
-.table-responsive
-  %table.table.table-striped.table-bordered.table-hover
-    %thead
-      %tr
-        %th Body
-        %th From
-        %th
-        %th
-        %th
-
-    %tbody
-      - @emails.each do |email|
-        %tr
-          %td= email.body
-          %td= email.from
-          %td= link_to 'Show', email
-          %td= link_to 'Edit', edit_email_path(email)
-          %td= link_to 'Destroy', email, data: { confirm: 'Are you sure?' }, method: :delete
+.container
+  .row
+    .col-xs-3
+      actions
+    .col-xs-9
+      = react_component('mail-box', emails: @emails)
